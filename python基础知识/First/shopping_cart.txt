@@ -1,0 +1,37 @@
+#/usr/local/bin/env python3
+#coding:utf-8
+
+flag = True
+product_order = [['Iphone8',6888],['MacPre',12000],['Mi6',2499],['coffee',31],['Book',80]]
+salary = input("请输入您的工资：")
+shopping_cart = []
+
+while True:
+    print ("-------商品列表-------")
+    for index,p in enumerate(product_order):
+        print (index,p[0],p[1])
+    choice = input("输入想要的商品编号：")
+    if choice.isdigit():
+        choice = int(choice)
+        if int(salary) - product_order[choice][1] >= 0:
+            shopping_cart.append(product_order[choice])
+            salary = int(salary) - product_order[choice][1]
+        else:
+            print("您的余额不足,请多好好工作赚点钱再出来浪！！！")
+            if len(shopping_cart) > 0:
+                print("-------您已购买以下商品--------")
+                for index, p in enumerate(shopping_cart):
+                    print(index, p[0], p[1])
+                    print("余额：" + str(salary))
+                    print("欢迎下次再来！")
+            else:
+                print("余额：" + str(salary))
+                print("您未购买任何商品，穷逼")
+            break
+    elif choice == "q":
+        print("-------您已购买以下商品--------")
+        for index, p in enumerate(shopping_cart):
+            print(index, p[0], p[1])
+        print("余额：" + str(salary))
+        print("欢迎下次再来！")
+        break

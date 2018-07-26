@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<namelist>
+    <name arrtib="{'enrolled': 'yes'}">
+        <age checked="no" />
+        <sex>male</sex>
+        <name>zhang chuhan</name>
+    </name>
+</namelist>
