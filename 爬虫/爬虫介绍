@@ -1,0 +1,41 @@
+1 什么是爬虫？
+    编写程序，根据URL获取网站信息
+    注意：犯法
+2  爬去汽车之家新闻
+    a 伪造浏览器想某个地址发送HTTP请求，获取返回字符串
+    pip3 install requests
+
+    response = requests.get(url="地址")
+    response.content
+    response.encoding = apparent_encoding
+    response.text
+
+    b bs4 解析HTML格式的字符串
+    pip3 install beautifulsoup4
+
+    soup = BeautifulSoup('<html>....</html>',"html.parser")
+
+    div = soup.find(name='')
+    div = soup.find(name='',id='')
+    div = soup.find(name='',_class='')
+    div = soup.find(name=''.attrs={'id':'','class':''})
+
+    div.text
+    div.attrs
+    div.get('href')
+
+    divs = soup.find(name='')
+    divs = soup.find(name='',id='')
+    divs = soup.find(name='',_class='')
+    divs = soup.find(name=''.attrs={'id':'','class':''})
+    divs是列表
+    div[0]
+
+    c
+    requests.post(
+        url='xxxxx'
+        data = {
+            'user':'xxx',
+            'password':'xxx'
+        }
+    )
